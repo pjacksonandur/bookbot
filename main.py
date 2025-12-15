@@ -1,16 +1,13 @@
 
-def get_book_text():
-    filePath = '/Users/pjackson/Documents/Development/bootDevProjects/bookbot/books/frankenstein.txt'
-    return filePath  
+#from stats import counterDef
+
+from stats import characterCount
 def main():
-    with open(get_book_text()) as f:
-        fileContents = f.read()
-        print(fileContents)
-def acceptText(main()):
-    main.split()
-    
-    
+ #   return counterDef
+    return characterCount
+#counterDef()
 main()
+
 
 
 
