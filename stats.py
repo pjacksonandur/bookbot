@@ -27,6 +27,7 @@ def characterCount():
     
     # Print the dictionary with character counts
     print("Character counts:")
+    #calls two elements in a for loop to print two values in the print statement
     for counter, count in char_count.items():
         print(f"'{counter}': {count}")
     
