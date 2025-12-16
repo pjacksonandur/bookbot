@@ -1,6 +1,4 @@
 
-#from stats import counterDef
-
 from stats import characterCount
 def main():
  #   return counterDef
