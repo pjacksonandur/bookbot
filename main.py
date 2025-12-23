@@ -1,4 +1,3 @@
-
 import sys
 from stats import (
     get_num_words,
@@ -8,13 +7,16 @@ from stats import (
 
 
 def main():
-    book_path = "books/frankenstein.txt"
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    book_path = sys.argv[1]
+
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     chars_dict = get_chars_dict(text)
     chars_sorted_list = chars_dict_to_sorted_list(chars_dict)
     print_report(book_path, num_words, chars_sorted_list)
-    return entryCheck()
 
 
 def get_book_text(path):
@@ -35,37 +37,5 @@ def print_report(book_path, num_words, chars_sorted_list):
 
     print("============= END ===============")
 
-def entryCheck():
-    # entryOne = sys.argv[0] 
-    # # sys.argv[2] = ['main.py']
-    # # firstBook = sys.argv[1]
-    # print(sys.argv)
-# Prints ['main.py', 'books/frankenstein.txt']
-    arguments = sys.argv[1:]
-    usersInput = ""
-    if len(arguments) != 2:
-        message = "Usage: python3 main.py books/frankenstein.txt"
-        print(message)
-        sys.exit(1)
-    else:
-        book_choice = arguments[0].lower()
-        book_path_from_arg = arguments[1]
-        if book_path_from_arg == 'frank':
-            frankBook = "books/frankenstein.txt"
-            print(frankBook)
-        elif book_path_from_arg == 'moby':
-            mobyBook = "books/mobydick.txt"
-            print(mobyBook)
-        elif book_path_from_arg == 'pride':
-            prideBook = "prideandprejudice.txt"
-            print(prideBook)
-        else:
-            try: FileNotFoundError
-            
-            finally:
-                sys.exit(1)
-                
-            
-        
 
 main()
